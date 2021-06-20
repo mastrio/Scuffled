@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/Particles/SuperJumpParticles.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=1]
+min_value = -1.0
+_data = [ Vector2( 0, -0.687117 ), 0.0, 0.0, 0, 0, Vector2( 1, -1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.639925, 0.953988 ), 0.0, 0.0, 0, 0, Vector2( 0.975746, 0.917178 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.52454 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 0.2
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
+scale_random = 0.2
+scale_curve = SubResource( 4 )
+color = Color( 0.933333, 0.690196, 0.0509804, 1 )
+hue_variation = 1.0
+hue_variation_random = 0.2
+hue_variation_curve = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SuperJumpParticles" type="Particles2D" parent="."]
+position = Vector2( -1, 0 )
+amount = 10
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 1 )
+
+[node name="LaunchHeight" type="Label" parent="."]
+margin_left = -426.041
+margin_top = -85.7392
+margin_right = -142.041
+margin_bottom = -58.7392
+rect_scale = Vector2( 3, 3 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

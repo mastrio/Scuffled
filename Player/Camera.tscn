@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player/Camera.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/FPScounter.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Pixel.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 169.709, 2433.5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[node name="Camera" type="Camera2D"]
+zoom = Vector2( 3, 3 )
+script = ExtResource( 1 )
+
+[node name="CameraEffects" type="Node2D" parent="."]
+
+[node name="Borders" type="StaticBody2D" parent="CameraEffects"]
+
+[node name="LeftEdge" type="CollisionShape2D" parent="CameraEffects/Borders"]
+position = Vector2( -1822.25, 0 )
+shape = SubResource( 1 )
+
+[node name="RightEdge" type="CollisionShape2D" parent="CameraEffects/Borders"]
+position = Vector2( 1819.87, 9.45435 )
+shape = SubResource( 1 )
+
+[node name="UIstuff" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="DeathTextBackground" type="ColorRect" parent="UIstuff"]
+visible = false
+margin_left = -890.0
+margin_top = -557.0
+margin_right = 5.0
+margin_bottom = -333.0
+rect_scale = Vector2( 2, 2 )
+color = Color( 0.152941, 0.152941, 0.152941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeathText" type="Label" parent="UIstuff/DeathTextBackground"]
+margin_left = -4.0
+margin_top = 18.5
+margin_right = 897.0
+margin_bottom = 223.5
+custom_fonts/font = SubResource( 2 )
+text = "You Died
+3...2...1..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Counter" type="ColorRect" parent="UIstuff"]
+margin_left = 1298.0
+margin_top = -893.0
+margin_right = 1642.0
+margin_bottom = -853.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPScounter" type="Label" parent="UIstuff/Counter"]
+margin_left = -127.0
+margin_top = 1.0
+margin_right = 30.0
+margin_bottom = 37.0
+rect_scale = Vector2( 3, 2.8 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FPS: 0"
+align = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
