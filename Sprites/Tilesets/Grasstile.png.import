@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dort_with_rock.png-9ed378f35ab3b4b89003fc3813bab5b2.stex"
+path="res://.import/Grasstile.png-a413e4c22aa5731e2743ec2125443ec2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/dort_with_rock.png"
-dest_files=[ "res://.import/dort_with_rock.png-9ed378f35ab3b4b89003fc3813bab5b2.stex" ]
+source_file="res://Sprites/Tilesets/Grasstile.png"
+dest_files=[ "res://.import/Grasstile.png-a413e4c22aa5731e2743ec2125443ec2.stex" ]
 
 [params]
 

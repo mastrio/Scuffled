@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/garss.png-38ce530db63ab45fbac11c73264cddab.stex"
+path="res://.import/Rock.png-50e90a7f5ba8dd3b245846b0cf6fcd87.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/garss.png"
-dest_files=[ "res://.import/garss.png-38ce530db63ab45fbac11c73264cddab.stex" ]
+source_file="res://Sprites/Tilesets/Rock.png"
+dest_files=[ "res://.import/Rock.png-50e90a7f5ba8dd3b245846b0cf6fcd87.stex" ]
 
 [params]
 

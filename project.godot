@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Stick Bois Beat Each Other Up"
-config/description="a really dumb game that should'nt exist"
+config/name="Scuffle"
+config/description="epic smash bros ripoff-ish game I guess"
 run/main_scene="res://Maps/TestBattleMap/TestBattleMap.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"

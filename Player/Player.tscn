@@ -1,13 +1,14 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/Red_Jumping.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Particles/RunningParticles.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Particles/DoubleJumpParticles.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Red_Walking.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Particles/Smoke.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Player/Red_Idle.png" type="Texture" id=7]
 
 [sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.751866, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.48773 ), 0.0, 0.0, 0, 0, Vector2( 0.453358, 0.941718 ), 0.0, 0.0, 0, 0, Vector2( 0.751866, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
 curve = SubResource( 1 )
@@ -27,24 +28,25 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 94.7
 angle_random = 0.22
-scale = 0.5
+scale = 2.0
+scale_random = 1.0
 scale_curve = SubResource( 2 )
 
-[sub_resource type="Curve" id=24]
+[sub_resource type="Curve" id=4]
 min_value = -1.0
 max_value = 0.0
 _data = [ Vector2( 0, -1 ), 0.0, 0.0, 0, 0, Vector2( 0.699627, -1 ), 0.0, 0.0, 0, 0, Vector2( 0.908582, -0.539877 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=25]
-curve = SubResource( 24 )
-
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.632463, 0.953988 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
 [sub_resource type="CurveTexture" id=5]
 curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.632463, 0.953988 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
 lifetime_randomness = 0.11
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
@@ -57,75 +59,141 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.5
 scale_random = 1.0
-scale_curve = SubResource( 5 )
+scale_curve = SubResource( 7 )
 color = Color( 1, 0.984314, 0, 1 )
-hue_variation_curve = SubResource( 25 )
+hue_variation_curve = SubResource( 5 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 18.8316, 23.1496 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=29]
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=33]
 animations = [ {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 9.0
 }, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": false,
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
 "name": "Jumping",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "Sprinting",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 20.0
 } ]
 
-[sub_resource type="Gradient" id=13]
-colors = PoolColorArray( 0.308594, 0.110976, 0.0144653, 1, 0.429688, 0.210385, 0.050354, 1 )
+[sub_resource type="Gradient" id=34]
+colors = PoolColorArray( 0.371094, 0.371094, 0.371094, 1, 0.675781, 0.675781, 0.675781, 1 )
 
-[sub_resource type="GradientTexture" id=14]
-gradient = SubResource( 13 )
+[sub_resource type="GradientTexture" id=35]
+gradient = SubResource( 34 )
 
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=36]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.54291, 0.917178 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
-curve = SubResource( 15 )
+[sub_resource type="CurveTexture" id=37]
+curve = SubResource( 36 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=38]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 1, 1 )
 flag_disable_z = true
@@ -133,10 +201,12 @@ gravity = Vector3( 0, 30, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.7
-scale_curve = SubResource( 16 )
-color_ramp = SubResource( 14 )
-hue_variation = 1.0
+scale_curve = SubResource( 37 )
+color_ramp = SubResource( 35 )
 hue_variation_random = 0.05
+
+[sub_resource type="OccluderPolygon2D" id=39]
+polygon = PoolVector2Array( -20.0091, -25.0318, 17.857, -24.7011, 17.857, 21.4328, -19.8438, 21.4328 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 1, 1 )
@@ -144,33 +214,38 @@ scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 1 )
 
 [node name="RunningParticles" type="Particles2D" parent="."]
-position = Vector2( -1, 9 )
+position = Vector2( -1, 18.1667 )
 emitting = false
 amount = 50
 lifetime = 0.5
 local_coords = false
 process_material = SubResource( 3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="DoubleJumpParticles" type="Particles2D" parent="."]
+visible = false
 position = Vector2( 0, 18.3333 )
 amount = 50
 local_coords = false
-process_material = SubResource( 6 )
+process_material = SubResource( 8 )
 texture = ExtResource( 4 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( -1.10397, -1.83807 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -3 )
-frames = SubResource( 29 )
+frames = SubResource( 33 )
 animation = "Jumping"
 
 [node name="JumpLandParticles" type="Particles2D" parent="."]
 visible = false
 position = Vector2( 0, 20 )
 explosiveness = 1.0
-process_material = SubResource( 17 )
-texture = ExtResource( 3 )
+process_material = SubResource( 38 )
+texture = ExtResource( 6 )
+
+[node name="LightBlocker" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource( 39 )

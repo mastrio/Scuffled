@@ -29,13 +29,13 @@ func _on_Player_respawn():
 
 # haha u ded
 func haha_u_ded():
-	$UIstuff/DeathTextBackground/DeathText.text = "Haha u ded!\nRespawning in 5"
+	$UIstuff/DeathTextBackground/DeathText.text = "lol u died!\nRespawning in 5"
 	yield(get_tree().create_timer(1), "timeout")
-	$UIstuff/DeathTextBackground/DeathText.text = "Haha u ded!\nRespawning in 4"
+	$UIstuff/DeathTextBackground/DeathText.text = "lol u died!\nRespawning in 4"
 	yield(get_tree().create_timer(1), "timeout")
-	$UIstuff/DeathTextBackground/DeathText.text = "Haha u ded!\nRespawning in 3"
+	$UIstuff/DeathTextBackground/DeathText.text = "lol u died!\nRespawning in 3"
 	yield(get_tree().create_timer(1), "timeout")
-	$UIstuff/DeathTextBackground/DeathText.text = "Haha u ded!\nRespawning in 2"
+	$UIstuff/DeathTextBackground/DeathText.text = "lol u died!\nRespawning in 2"
 	yield(get_tree().create_timer(1), "timeout")
-	$UIstuff/DeathTextBackground/DeathText.text = "Haha u ded!\nRespawning in 1"
+	$UIstuff/DeathTextBackground/DeathText.text = "lol u died!\nRespawning in 1"
 	yield(get_tree().create_timer(1), "timeout")

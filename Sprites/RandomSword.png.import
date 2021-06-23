@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stoney_rock_with_amethyst.png-0e316b28ec8584d3cc23f0db7c4e9026.stex"
+path="res://.import/RandomSword.png-11a6cf7b0a8e7121109c58038f60728f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/stoney_rock_with_amethyst.png"
-dest_files=[ "res://.import/stoney_rock_with_amethyst.png-0e316b28ec8584d3cc23f0db7c4e9026.stex" ]
+source_file="res://Sprites/RandomSword.png"
+dest_files=[ "res://.import/RandomSword.png-11a6cf7b0a8e7121109c58038f60728f.stex" ]
 
 [params]
 
