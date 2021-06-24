@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Scuffle"
+config/name="Scuffled"
 config/description="epic smash bros ripoff-ish game I guess"
 run/main_scene="res://Maps/TestBattleMap/TestBattleMap.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
